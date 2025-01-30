@@ -18,6 +18,11 @@ function Double() {
       document.documentElement.removeAttribute('theme-mode');
   };
   console.log(useLocation())
+  const mylocation=useLocation();
+  if(mylocation.pathname==='/login'){
+    return (<></>)
+  }
+
   function onclick(v:any){
     console.log(v)
     setActive(v)
