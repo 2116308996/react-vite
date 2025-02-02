@@ -7,7 +7,12 @@ import './viewcode.less'
 import "prismjs/plugins/line-numbers/prism-line-numbers.min.css";
 import "prismjs/plugins/line-numbers/prism-line-numbers.min.js";
 import { Collapse } from "tdesign-react";
-const code = (props: any) => {
+
+interface CodeProps {
+    el: string;
+}
+
+const Code = (props: CodeProps) => {
     useEffect(() => {
         Prism.highlightAll();
     }, []);
@@ -25,4 +30,4 @@ const code = (props: any) => {
     )
 }
 
-export default code
+export default Code

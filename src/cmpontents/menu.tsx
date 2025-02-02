@@ -2,10 +2,22 @@ import { Fragment, useState } from 'react';
 import { Menu, Button, Switch } from 'tdesign-react';
 import { SearchIcon, MailIcon, UserIcon, EllipsisIcon, Icon } from 'tdesign-icons-react';
 import type { MenuValue } from 'tdesign-react';
-import { Routes, Route,useNavigate,useLocation,createBrowserRouter,RouterProvider } from "react-router-dom";
-import { dynamicsRouters,foldRoutes, routes } from '../router/router';
+import { useNavigate,useLocation } from "react-router-dom";
+import { dynamicsRouters } from '../router/router';
+import { ReactNode } from 'react';
 const { HeadMenu, SubMenu, MenuItem } = Menu;
 
+export interface RouteMeta {
+  showMenu: boolean;
+}
+
+export interface RouteItem {
+  path: string;
+  name: string;
+  meta?: RouteMeta;
+  element?: ReactNode;
+  children?: RouteItem[];
+} 
 function Double() {
   
   const [active, setActive] = useState<MenuValue>('/1home/1home');
@@ -14,8 +26,11 @@ function Double() {
   const onChange = (value: boolean) => {
     console.log('value', value);
     setChecked(value);
-    value ? document.documentElement.setAttribute('theme-mode', 'dark') :
+    if (value) {
+      document.documentElement.setAttribute('theme-mode', 'dark');
+    } else {
       document.documentElement.removeAttribute('theme-mode');
+    }
   };
   console.log(useLocation())
   const mylocation=useLocation();
@@ -23,10 +38,10 @@ function Double() {
     return (<></>)
   }
 
-  function onclick(v:any){
+  function onclick(v: MenuValue) {
     console.log(v)
     setActive(v)
-    navigate(v)
+    navigate(v.toString())
   }
   //brightness-1 brightness
   const operations = () => (
@@ -47,10 +62,11 @@ function Double() {
         style={{ marginBottom: 0, width: '100%' }}
         operations={operations()}
       >
-        {dynamicsRouters.map((router: any) => (
-          <SubMenu  key={router.path} value={router.path} title={router.name}>
-            {router.children.map((routerChildren: any) => (
-              <MenuItem onClick={(v)=>(v)} target='_blank' href='http://localhost:5173/1home/1home' key={routerChildren.path} value={routerChildren.path}>{routerChildren.name}</MenuItem>
+        {dynamicsRouters.map((router: RouteItem) => (
+          <SubMenu key={router.path} value={router.path} title={router.name}>
+            {router.children?.map((routerChildren: RouteItem) => (
+              <MenuItem onClick={(v)=>(v)} target='_blank' href='http://localhost:5173/1home/1home' 
+                key={routerChildren.path} value={routerChildren.path}>{routerChildren.name}</MenuItem>
             ))}
           </SubMenu>
         ))}

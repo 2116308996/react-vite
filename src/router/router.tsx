@@ -2,9 +2,10 @@ import home1route from "./modules/1home";
 import home2route from "./modules/2home";
 import Login from '../views/login';
 import Home1to1 from "../views/1home/1home-1";
-import { createBrowserRouter } from "react-router-dom";
+//import { createBrowserRouter } from "react-router-dom";
+import { RouteItem } from './types';
 //静态路由
-const staticRouters = [
+const staticRouters :RouteItem[]= [
     {
         path: '/',
         name: '首页',
@@ -30,10 +31,9 @@ const dynamicsRouters = [
 //路由折叠
 const foldRoutes = [...staticRouters, ...dynamicsRouters]
 //路由平铺
-const routes: any = [];
-function RouteFilter(foldRoutes: any[]) {
-    foldRoutes.forEach((route: any) => {
-        
+const routes: RouteItem[] = [];
+function RouteFilter(foldRoutes: RouteItem[]) {
+    foldRoutes.forEach((route: RouteItem) => {
         if (route.children) {
             RouteFilter(route.children)
         }else{
