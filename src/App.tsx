@@ -11,7 +11,7 @@ import * as allRouter from "react-router-dom";
 function App() {
   const [count, setCount] = useState(0)
   // const userouter = createBrowserRouter(routes);
-  console.log("aa", useLocation())
+ // console.log("aa", useLocation())
   return (
     <>
       <Menu>

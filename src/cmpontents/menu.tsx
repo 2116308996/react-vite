@@ -19,8 +19,8 @@ export interface RouteItem {
   children?: RouteItem[];
 } 
 function Double() {
-  const url=window.location.href.split('localhost:5173')[1]
-  console.log("url",url)
+  const url=window.location.href.split('localhost:5173')[1].split('?')[0]
+  //console.log("url",url)
   var [active, setActive] = useState<MenuValue>('/1home/1home');
   if(url!='/'){
     active=url;
@@ -29,7 +29,7 @@ function Double() {
   const navigate=useNavigate();
 
   const onChange = (value: boolean) => {
-    console.log('value', value);
+    //console.log('value', value);
     setChecked(value);
     if (value) {
       document.documentElement.setAttribute('theme-mode', 'dark');
@@ -37,14 +37,14 @@ function Double() {
       document.documentElement.removeAttribute('theme-mode');
     }
   };
-  console.log(useLocation())
+  //console.log(useLocation())
   const mylocation=useLocation();
   if(mylocation.pathname==='/login'){
     return (<></>)
   }
 
   function onclick(v: MenuValue) {
-    console.log(v)
+   // console.log(v)
     setActive(v)
     navigate(v.toString())
   }
