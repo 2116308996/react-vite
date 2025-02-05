@@ -1,13 +1,10 @@
-import Index1 from './1home-1/1index';
-import Indexcode1 from './1home-1/1index?raw';
-import Viewcode from '../../cmpontents/viewcode';
-function home1to1(){
-  console.log(Index1)
-    return (
+function home1to1() {
+  return (
     <>
-      <Index1></Index1>
-      <Viewcode el={Indexcode1}></Viewcode>
+      <div>npm init vite</div>
+      <div>npm install</div>
+      <div>npm run dev</div>
     </>
-    );
+  );
 }
 export default home1to1

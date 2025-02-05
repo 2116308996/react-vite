@@ -19,10 +19,15 @@ export interface RouteItem {
   children?: RouteItem[];
 } 
 function Double() {
-  
-  const [active, setActive] = useState<MenuValue>('/1home/1home');
+  const url=window.location.href.split('localhost:5173')[1]
+  console.log("url",url)
+  var [active, setActive] = useState<MenuValue>('/1home/1home');
+  if(url!='/'){
+    active=url;
+  }
   const [checked, setChecked] = useState(false);
   const navigate=useNavigate();
+
   const onChange = (value: boolean) => {
     console.log('value', value);
     setChecked(value);
