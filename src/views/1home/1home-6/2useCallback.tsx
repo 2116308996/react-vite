@@ -1,7 +1,18 @@
 import {useCallback,useState} from 'react'
+const map=new Map()
+let mapcount=1;
 export default function useCallbackFun(){
-    const [count,setCount]=useState(0)
     const [name,setName]=useState('')
-    const [list,setList]=useState([])
-    return <div></div>
+    console.log("render")
+    const handleChange=useCallback((e:any)=>{
+        console.log("handleChange")
+        setName(e.target.value)
+    },[])
+    if(!map.has(handleChange)){
+        map.set(handleChange,mapcount++)
+    }
+    console.log(map.get(handleChange))
+    return <div>
+        <input type="text" value={name} onChange={handleChange} />
+    </div>
 }

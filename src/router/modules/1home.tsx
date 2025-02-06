@@ -9,7 +9,7 @@ import Home1to7 from "../../views/1home/1home-7";
 import RouterAuth from '../routerAuth';
 const home1route = {
     path: '/1home/1home',
-    name: 'React',
+    name: 'ReactHooks',
     children: [
         {
             path: '/1home/1home',
