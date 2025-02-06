@@ -3,7 +3,7 @@ import { useState } from 'react'
 // import viteLogo from '/vite.svg'
 import './App.css'
 import 'tdesign-react/es/style/index.css';
-import Menu from './cmpontents/menu';
+import Menu from './components/menu';
 import { dynamicsRouters, foldRoutes, routes } from './router/router';
 import { Routes, Route, Router, useNavigate, useLocation, createBrowserRouter, RouterProvider } from "react-router-dom";
 

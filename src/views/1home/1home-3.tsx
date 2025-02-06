@@ -2,7 +2,7 @@ import Index1 from './1home-3/1useState';
 import Indexcode1 from './1home-3/1useState?raw';
 import Index2 from './1home-3/2useReducer';
 import Indexcode2 from './1home-3/2useReducer?raw';
-import Viewcode from '../../cmpontents/viewcode';   
+import Viewcode from '../../components/viewcode';   
 import Index3 from './1home-3/3useSyncExternalStore';
 import Indexcode3 from './1home-3/3useSyncExternalStore?raw';
 import  useHistory  from '../../hooks/useHistory?raw';

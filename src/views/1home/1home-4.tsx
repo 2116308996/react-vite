@@ -1,6 +1,6 @@
 import Index1 from "./1home-4/1useEffect";
 import Indexcode1 from "./1home-4/1useEffect?raw";
-import Viewcode from "../../cmpontents/viewcode";
+import Viewcode from "../../components/viewcode";
 import Eg from './1home-4/1eg'
 import Egcode from './1home-4/1eg?raw'
 import Index2 from './1home-4/2useLayoutEffect'

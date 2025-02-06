@@ -1,4 +1,4 @@
-import Viewcode from '../../cmpontents/viewcode'
+import Viewcode from '../../components/viewcode'
 import Index1 from "./1home-5/1useRef";
 import Index1code from "./1home-5/1useRef?raw";
 import Index2 from "./1home-5/2useImperativeHandle";
