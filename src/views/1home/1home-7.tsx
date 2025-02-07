@@ -4,6 +4,7 @@ import Index2 from './1home-7/2useId'
 import Index2code from './1home-7/2useId?raw'
 import Index3 from './1home-7/3useWaterMark'
 import Index3code from './1home-7/3useWaterMark?raw'
+import Index4code from '../../hooks/useWaterMark?raw'
 import Viewcode from '../../components/viewcode'
 function home1to7(){
     return (
@@ -22,6 +23,7 @@ function home1to7(){
             <h2>自定义hooks</h2>
             <Index3></Index3>
             <Viewcode el={Index3code}></Viewcode>
+            <Viewcode el={Index4code}></Viewcode>
         </div>
     )
 }

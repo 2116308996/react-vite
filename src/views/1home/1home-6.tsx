@@ -3,10 +3,13 @@ import Index2 from './1home-6/2useCallback'
 import Index1code from './1home-6/1useMemo?raw'
 import Index2code from './1home-6/2useCallback?raw'
 import Viewcode from '../../components/viewcode'
-
+import Index3code from './1home-6/children1?raw'
+import Index4code from './1home-6/apple?raw'
 function home1to6() {
     return (
         <div>
+
+
 
 
             <h2>useMemo</h2>
@@ -21,6 +24,8 @@ function home1to6() {
             <h4>React.memo 是一个 React API，用于优化性能。它通过记忆上一次的渲染结果，仅当 props 发生变化时才会重新渲染, 避免重新渲染。</h4>
             <Index1></Index1>
             <Viewcode el={Index1code} />
+            <Viewcode el={Index3code} />
+            <Viewcode el={Index4code} />
 
             <h2>useCallback</h2>
             <h4>useCallback useCallback 用于优化性能，返回一个记忆化的回调函数，可以减少不必要的重新渲染，也就是说它是用于缓存组件内的函数，避免函数的重复创建。</h4>

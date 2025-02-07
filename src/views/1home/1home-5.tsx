@@ -5,7 +5,12 @@ import Index2 from "./1home-5/2useImperativeHandle";
 import Index2code from "./1home-5/2useImperativeHandle?raw";
 import Index3 from "./1home-5/3useContent";
 import Index3code from "./1home-5/3useContent?raw";
+import Index4code from './1home-5/3parent?raw'
+import Index5code from './1home-5/3child1?raw'
+import Index6code from './1home-5/3child2?raw'
+import TScode from './1home-5/context?raw'
 import { useRef } from 'react';
+
 function home1to5(){
     interface ChildHandles {
         handleClick: () => void;
@@ -37,7 +42,12 @@ function home1to5(){
             <h4>useContext 提供了一个无需为每层组件手动添加 props，就能在组件树间进行数据传递的方法。设计的目的就是解决组件树间数据传递的问题。</h4>
             <Index3></Index3>
             <Viewcode el={Index3code}></Viewcode>
+            <Viewcode el={TScode}></Viewcode>
+            <Viewcode el={Index4code}></Viewcode>
+            <Viewcode el={Index5code}></Viewcode>
+            <Viewcode el={Index6code}></Viewcode>
         </div>
     )
 }
+
 export default home1to5;
