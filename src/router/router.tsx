@@ -2,6 +2,7 @@ import home1route from "./modules/1home";
 import home2route from "./modules/2home";
 import Login from '../views/login';
 import Home1to1 from "../views/1home/1home-1";
+import Home3 from '../views/3home/index'
 //import { createBrowserRouter } from "react-router-dom";
 import { RouteItem } from './types';
 //静态路由
@@ -21,6 +22,11 @@ const staticRouters :RouteItem[]= [
             showMenu: false,
         },
         element: <Login />
+    },
+    {
+        path:'/mc',
+        name:'鸣潮官网',
+        element:<Home3></Home3>
     }
 ]
 //动态路由

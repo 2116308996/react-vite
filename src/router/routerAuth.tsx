@@ -6,7 +6,7 @@ const getToken=()=>{
 function RouterAuth(el:any){
   const token=getToken()
   if(token){
-    return (<>{el.children}</>)
+    return (<div style={{  paddingLeft: '10px',paddingRight:'10px',width:'60%',margin:'0 auto',backgroundColor:'white' }}>{el.children}</div>)
   }else{
     return <Navigate to="/login"></Navigate>
   }

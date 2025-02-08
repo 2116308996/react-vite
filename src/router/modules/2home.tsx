@@ -16,17 +16,17 @@ const home1route = {
         {
             path: '/2home/2home',
             name: "受控组件",
-            element: <Home2to2 />
+            element: <RouterAuth><Home2to2 /></RouterAuth>
         },
         {
             path: '/2home/3home',
             name: "传送组件",
-            element: <Home2to3 />
+            element: <RouterAuth><Home2to3 /></RouterAuth>
         },
         {
             path: '/2home/4home',
             name: "异步组件",
-            element: <Home2to4 />
+            element: <RouterAuth><Home2to4 /></RouterAuth>
         }
     ]
 };

@@ -19,32 +19,32 @@ const home1route = {
         {
             path: '/1home/2home',
             name: "工具篇",
-            element: <Home1to2 />
+            element: <RouterAuth><Home1to2 /></RouterAuth>
         },
         {
             path: '/1home/3home',
             name: "数据驱动hooks",
-            element: <Home1to3 />
+            element: <RouterAuth><Home1to3 /></RouterAuth>
         },
         {
             path: '/1home/4home',
             name: "副作用hooks",
-            element: <Home1to4 />
+            element: <RouterAuth><Home1to4 /></RouterAuth>
         },
         {
             path: '/1home/5home',
             name: "状态传递hooks",
-            element: <Home1to5 />
+            element: <RouterAuth><Home1to5 /></RouterAuth>
         },
         {
             path: '/1home/6home',
             name: "状态派生hooks",
-            element: <Home1to6 />
+            element: <RouterAuth><Home1to6 /></RouterAuth>
         },
         {
             path: '/1home/7home',
             name: "工具hooks",
-            element: <Home1to7 />
+            element: <RouterAuth><Home1to7 /></RouterAuth>
         }
     ]
 };

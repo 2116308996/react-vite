@@ -5,8 +5,8 @@ import './App.css'
 import 'tdesign-react/es/style/index.css';
 import { MessagePlugin } from 'tdesign-react';
 import Menu from './components/menu';
-import { dynamicsRouters, foldRoutes, routes } from './router/router';
-import { Routes, Route, Router, useNavigate, useLocation, createBrowserRouter, RouterProvider } from "react-router-dom";
+import { staticRouters, routes } from './router/router';
+import { Routes, Route, useLocation, createBrowserRouter, RouterProvider } from "react-router-dom";
 window.MessagePlugin = MessagePlugin
 declare global {
   interface Window {
@@ -14,20 +14,19 @@ declare global {
   }
 }
 function App() {
- 
+  const mylocation=useLocation()
+  console.log(mylocation.pathname,staticRouters)
   // const userouter = createBrowserRouter(routes);
- // console.log("aa", useLocation())
-
   return (
     <>
       <Menu>
       </Menu>
       {/* <RouterProvider router={userouter}>
       </RouterProvider> */}
-      <div style={{  paddingLeft: '10px',paddingRight:'10px' }}>
+      <div>
         <Routes>
           {routes.map((route: any, index: number) => (
-            <Route key={index} path={route.path} element={route.element} />
+            <Route key={index} path={route.path} element={route.element}/>
           ))}
         </Routes>
       </div>
