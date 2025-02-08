@@ -75,7 +75,7 @@ function Double() {
             ))}
           </SubMenu>
         ))}
-        <MenuItem key='mc' value='/mc'>深空之眼官网</MenuItem>
+        <MenuItem key='mc' value='/mc'>鸣潮官网</MenuItem>
       </HeadMenu>
       
       
