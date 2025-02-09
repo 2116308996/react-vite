@@ -22,7 +22,7 @@ const APP = () => {
   return (<>
     <div className="popupQQ" style={{
       backgroundColor: 'rgba(0,0,0,0.7)',
-      width: '100%', height: '100vh', position: 'absolute', display: 'none'
+      width: '100%', height: 'calc(100vh - 56px)', position: 'absolute', display: 'none'
     }}>
       <div className="count" style={{
         background: "url(https://mc.kurogames.com/website-preface/assets/popup-qq-8c14af50.png) no-repeat center",
@@ -30,7 +30,7 @@ const APP = () => {
       }}>
         <CloseIcon onClick={closePopupQQ} style={{ fontSize: '2rem', position: "absolute", right: '-50px', color: '#c9ac67' }} />
         <div>
-          <h2 style={{ color: '#c9ac67', fontSize: '2rem', position: 'absolute', top: "0rem", left: '2rem' }}>QQ官方群</h2>
+          <h2 style={{ color: '#c9ac67', fontSize: '2rem', position: 'absolute', top: "0rem", left: '2rem' }}>官方QQ群</h2>
           <section style={{ fontSize: '1.5rem', color: 'white', paddingTop: '8rem' }}>
             <div style={{ width: '23rem', height: '4rem', margin: '0 auto', display: 'flex', justifyContent: "space-between", alignItems: 'center' }}>
               <div>官方3群</div>

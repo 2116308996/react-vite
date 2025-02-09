@@ -2,6 +2,7 @@ import { useEffect, useState,useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import type { Swiper as SwiperType } from 'swiper';
 import SwiperItem1 from './swiper/index1'
+import SwiperItem2 from './swiper/index2'
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 //@ts-ignore
 import 'swiper/css';
@@ -27,6 +28,10 @@ const APP = () => {
                 opacity:1,
                 right:'1.5rem'
             })
+            gasp.to('.bottom-box',{
+                bottom: '10rem',
+                opacity:1
+            })
         },speed/2)
     }
 
@@ -44,7 +49,10 @@ const APP = () => {
             opacity:0,
             right:'-2rem'
         })
-
+        gasp.to('.bottom-box',{
+            bottom: '0rem',
+            opacity:0
+        })
     }
     const onSlideChange = (swiper: SwiperType) => {
         console.log(swiper)
@@ -84,7 +92,7 @@ const APP = () => {
     }, []);
     return (
         <>
-            <main>
+            <main className='swiper-container'>
                 <Swiper
                     onBeforeInit={(swiper) => {
                         swiperRef.current = swiper;
@@ -100,11 +108,12 @@ const APP = () => {
                     onSwiper={(swiper) => console.log(swiper)}
                     threshold={40}
                     direction='vertical'
-                    navigation
-                    pagination
+                    allowTouchMove={false}
+                   // navigation
+                   // pagination
                 >
                     <SwiperSlide><SwiperItem1></SwiperItem1></SwiperSlide>
-                    <SwiperSlide>Slide 2</SwiperSlide>
+                    <SwiperSlide><SwiperItem2></SwiperItem2></SwiperSlide>
                     <SwiperSlide>Slide 3</SwiperSlide>
                     <SwiperSlide>Slide 4</SwiperSlide>
                     <SwiperSlide>Slide 5</SwiperSlide>

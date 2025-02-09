@@ -1,15 +1,24 @@
 import { useEffect, useState } from 'react';
 import gasp from 'gsap'
-import LinkItem from './linkItem'
+import LinkItem from '../data/linkItem'
 import PopupQQ from '../components/popupQQ'
+import PopupVideo from '../components/popupVideo'
+import '../swiperCSS/index1.less'
 const APP = () => {
     const openPopupQQ = () => {
         const dom:HTMLElement=document.getElementsByClassName('popupQQ')[0] as HTMLElement
         dom.style.display = 'block'
     }
+    const openPopupVideo = () => {
+        const dom:HTMLElement=document.getElementsByClassName('popupVideo')[0] as HTMLElement
+        dom.style.display = 'block'
+        const myVideo=document.getElementById('popupVideoPlay') as HTMLVideoElement
+        myVideo.play()
+    }
     const onMouseEnterWX = () => {
         gasp.to('.qrCode', {
             opacity: 1,
+
             transform: 'scale(1)'
         })
     }
@@ -18,6 +27,9 @@ const APP = () => {
             opacity: 0,
             transform: 'scale(0.1)'
         })
+    }
+    const openDownload = () => {
+
     }
     return (
         <div className='swiperItem1' style={{ width: '100vw', height: '100%', overflow: 'hidden' }}>
@@ -72,7 +84,13 @@ const APP = () => {
                 </div>
             </div>
             <div className='bottom-box'>
-
+                <div className='main-title-img'>
+                    <img src="https://mc.kurogames.com/website-preface/assets/main-title-img-50d22c9f.png" alt="" />
+                    <div className='btn-play' onClick={openPopupVideo}></div>
+                </div>
+                <div className='download-btn' onClick={() => openDownload()}>
+                    <img src="https://mc.kurogames.com/website-preface/assets/download-btn-560647be.png" alt="" />
+                </div>
             </div>
             <video
                 style={{
@@ -88,6 +106,7 @@ const APP = () => {
                 poster='https://mc.kurogames.com/website-preface/video/bg/bg-poster.png'
                 loop autoPlay muted playsInline></video>
             <PopupQQ></PopupQQ>
+            <PopupVideo></PopupVideo>
         </div>
     )
 }

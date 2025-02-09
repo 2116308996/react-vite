@@ -1,5 +1,5 @@
 import { useState,useDebugValue } from "react";
-import {useWatermark} from '../../../hooks/useWaterMark'
+import {useWatermark} from '../../../hooks/useWatermark'
 const App=()=>{
   const [updateWatermark, opts] = useWatermark({
     content: '水印水印水印',
