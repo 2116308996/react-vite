@@ -7,16 +7,182 @@
         width: 100%;
         height: 100%;
         position: absolute;
-        .bg-box{
-            position: relative;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 4rem;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+            //    禁用鼠标事件
+            pointer-events: none;
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            width: 4rem;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+            //    禁用鼠标事件
+            pointer-events: none;
+        }
+
+        .bg-box {
+            position: absolute;
             width: 100%;
             height: 100%;
-            img{
+
+            img {
                 object-fit: cover;
             }
-            .light{
+
+            @keyframes rotate {
+                from {
+                    transform: rotate(0deg);
+                    /* 从 0 度开始 */
+                }
+
+                to {
+                    transform: rotate(360deg);
+                    /* 旋转到 360 度 */
+                }
+            }
+
+            .light {
+                position: absolute;
+                top: -35rem;
+                left: -35rem;
+                transform: translate(-50%, -50%);
+                width: 70rem;
+                filter: blur(4px);
+                height: 70rem;
                 background: url(https://mc.kurogames.com/website-preface/assets/light4-8c14b79e.png) no-repeat center;
                 background-size: 100% 100%;
+                animation: rotate 120s linear infinite;
+            }
+            .lightVideo{
+                width: 55rem;
+                height: 55rem;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: transparent;
+                video{
+                    width: 55rem;
+                    // 视频与页面背景融合 实现视频背景透明
+                    mix-blend-mode: screen;
+                    background-color: transparent;
+
+                }
+            }
+        }
+
+        .page-title-box {
+            position: absolute;
+            top: 4rem;
+            left: 4rem;
+            width: 16rem;
+        }
+
+        .page-bg-title-box {
+            width: 100%;
+            height: 2rem;
+            position: absolute;
+            top: 7.5rem;
+            left: 4rem;
+            display: flex;
+            justify-content: left;
+
+            .title-bg-1 {
+                width: 4rem;
+            }
+
+            .title-bg-2 {
+                margin-top: 0.3rem;
+                margin-left: -0.8rem;
+                height: 2px;
+                width: calc(100% - 7rem);
+            }
+        }
+
+        .role-intr-box {
+            position: absolute;
+            top: 15rem;
+            left: 6rem;
+            width: 50rem;
+            height: 30rem;
+
+            .role-name {
+                width: 100%;
+                height: 5rem;
+                display: flex;
+                justify-content: left;
+                align-items: center;
+
+                .role-name-img1 {
+                    width: 3rem;
+                    object-fit: contain;
+                }
+
+                p {
+                    font-size: 3rem;
+                    font-weight: 700;
+                    letter-spacing: 0.2rem;
+                    color: #dab67d;
+                }
+
+                .role-name-img2 {
+                    width: 10rem;
+                    object-fit: contain;
+                }
+            }
+
+            .attr-voice-box {
+                width: 22rem;
+               
+                .voice-box {
+                    width: 8rem;
+                    font-size: 0.8rem;
+                    height: 1.5rem;
+                    color: white;
+                    line-height: 1.5rem;
+                    border: #dab67d 1px solid;
+                    border-radius: 1rem;
+                    display: flex;
+                    padding: 0 1rem;
+                    justify-content: space-between;
+                    align-items: center;
+                   
+                }
+
+                .voice-text {
+                    margin-top: 1rem;
+                    width: 100%;
+                    font-size: 0.8rem;
+                    color: #dab67d;
+                    text-align: left;
+                }
+            }
+        }
+
+        .role-box {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
             }
         }
     }

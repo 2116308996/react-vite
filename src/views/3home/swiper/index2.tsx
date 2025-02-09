@@ -10,6 +10,8 @@ import imgList from '../data/swiperNavigationImg'
 import '../swiperCSS/index2.less'
 import roleNavData from '../data/roleNavData'
 import RoleNavItem from '../components/roleNavItem'
+import { SoundLowIcon } from 'tdesign-icons-react';
+import * as PIXI from 'pixi.js';
 const APP = () => {
     const swiperRef = useRef<SwiperType>()
     const [activeIndex, setActiveIndex] = useState(0)
@@ -22,6 +24,27 @@ const APP = () => {
             default:
                 break;
         }
+    }
+
+    const init =async ()=>{
+        //https://mc.kurogames.com/spine-file/role_changli/c_changli_1.atlas
+        //https://mc.kurogames.com/spine-file/role_changli/c_changli_1.json
+        //https://mc.kurogames.com/spine-file/role_changli/c_changli_1.png
+        const js=await fetch("https://mc.kurogames.com/spine-file/role_changli/c_changli_1.json").then(res=>res.json())
+      
+      const app=new PIXI.Application({ width: 800, height: 600 })
+      document.getElementById('role-box')?.appendChild(app.view)
+
+    }
+     init()
+    const playAudio=()=>{
+       const myaudio =document.getElementById('roleAudio') as HTMLAudioElement
+      if(myaudio.paused){
+        myaudio.play()
+      }else{
+        myaudio.pause()
+      }
+       
     }
     const swiperButtonPrev = () => {
         if (activeIndex > 0) {
@@ -48,6 +71,38 @@ const APP = () => {
                 <div className='bg-box'>
                     <img src="https://mc.kurogames.com/website-preface/assets/progress-bg-452c1851.webp" alt="" />
                     <div className='light'></div>
+                    <div className='lightVideo'>
+                        <video
+                        loop autoPlay muted playsInline preload='auto'
+                        src="https://mc.kurogames.com/website-preface/video/desktop/lizi-loop.mp4"></video>
+                    </div>
+                </div>
+                <div className='page-title-box'>
+                    <img src="https://mc.kurogames.com/website-preface/assets/page-title-1be9dc58.png" alt="" />
+                </div>
+                <div className='page-bg-title-box'>
+                    <img className='title-bg-1' src={imgList[4]} alt="" />
+                    <img className='title-bg-2' src="https://mc.kurogames.com/website-preface/assets/title-bg-2-9ee080e2.png" alt="" />
+                </div>
+                <div className='role-box'>
+
+                    {/* <img src={roleNavData[activeIndex].roleBoxSrc} alt="" /> */}
+                </div>
+                <div className='role-intr-box'>
+                    <div className='role-name'>
+                        <img className='role-name-img1' src={roleNavData[activeIndex].attr} alt="" />
+                        <p>{roleNavData[activeIndex].name}</p>
+                        <img  className='role-name-img2' src={roleNavData[activeIndex].starSrc} alt="" />
+                    </div>
+                    <div className='attr-voice-box'>
+                        <div className='voice-box'>
+                            <span>{roleNavData[activeIndex].cv}</span>
+                           
+                            <SoundLowIcon style={{fontSize:"1.1rem",color:'#dab67d',cursor:"pointer"}} onClick={playAudio}></SoundLowIcon>
+                            <audio id='roleAudio' src={roleNavData[activeIndex].audioSrc}></audio>            
+                        </div>
+                        <div className='voice-text'>{roleNavData[activeIndex].content}</div>
+                    </div>
                 </div>
             </div>
 
