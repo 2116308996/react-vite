@@ -21,7 +21,37 @@
     height: 100%;
     object-fit: cover;
   }
-  
+  @keyframes blink-animation  {
+    0%{
+      opacity: 0;
+      bottom: 3rem;
+    }
+    40%{
+      opacity: 1;
+      bottom: 2rem;
+    }
+    80%{
+      opacity: 0;
+      bottom: 1rem;
+    }
+    100%{
+      opacity: 0;
+      bottom: 1rem;
+    }
+  }
+  .footer{
+    position: absolute;
+    bottom: 3rem;
+    width: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    animation:blink-animation 1s infinite ease-in-out;
+    img{
+      width: 100%;
+      object-fit:contain;
+    }
+  }
 }
 
 .t-message {

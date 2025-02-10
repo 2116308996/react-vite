@@ -12,6 +12,7 @@ import roleNavData from '../data/roleNavData'
 import RoleNavItem from '../components/roleNavItem'
 import { SoundLowIcon } from 'tdesign-icons-react';
 import { useDebounce } from '../../../hooks/throttle';
+let timer:ReturnType<typeof setTimeout>|null=null;
 import gasp from 'gsap'
 const APP = () => {
     const swiperRef = useRef<SwiperType>()
@@ -28,11 +29,11 @@ const APP = () => {
         }
     }
 
-    const init = () => {
+  //  const init = () => {
         //https://mc.kurogames.com/spine-file/role_changli/c_changli_1.atlas
         //https://mc.kurogames.com/spine-file/role_changli/c_changli_1.json
         //https://mc.kurogames.com/spine-file/role_changli/c_changli_1.png
-    }
+    //}
     const playAudio = () => {
         const myaudio = document.getElementById('roleAudio') as HTMLAudioElement
 
@@ -61,18 +62,17 @@ const APP = () => {
         console.log(activeIndex)
         swiperRef.current?.slideTo(activeIndex)
         console.log("dsadsa")
-        useDebounce(()=>{
+        gasp.to(['.role-box', '.role-camp', '.role-intr-box'], {
+            opacity: 0
+        })
+        timer&&clearTimeout(timer)
+        timer=setTimeout(()=>{
             console.log("aaaa")
-            gasp.to(['.role-box', '.role-camp', '.role-intr-box'], {
-                opacity: 0,
-                onComplete:()=>{
                     setActiveMoveIndex(activeIndex)
                     gasp.to(['.role-box', '.role-camp', '.role-intr-box'], {
                         opacity: 1
                     })
-                }
-            })
-        },300,false)();
+        },300);
     }, [activeIndex])
 
 
