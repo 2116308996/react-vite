@@ -20,8 +20,8 @@ export interface RouteItem {
 }
 function Double() {
   let url = ""
-  if (window.location.href.includes('https://2116308996.github.io/react-vite/')) {
-    url = window.location.href.split('https://2116308996.github.io/react-vite/')[1].split('?')[0]
+  if (window.location.href.includes('https://2116308996.github.io/react-vite')) {
+    url = window.location.href.split('https://2116308996.github.io/react-vite')[1].split('?')[0]
   } else {
     url = window.location.href.split('localhost:5173')[1].split('?')[0]
   }
