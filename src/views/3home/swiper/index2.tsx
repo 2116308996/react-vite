@@ -11,10 +11,12 @@ import '../swiperCSS/index2.less'
 import roleNavData from '../data/roleNavData'
 import RoleNavItem from '../components/roleNavItem'
 import { SoundLowIcon } from 'tdesign-icons-react';
-import * as PIXI from 'pixi.js';
+import { useDebounce } from '../../../hooks/throttle';
+import gasp from 'gsap'
 const APP = () => {
     const swiperRef = useRef<SwiperType>()
     const [activeIndex, setActiveIndex] = useState(0)
+    const [activeMoveIndex, setActiveMoveIndex] = useState(0)
     const onSlideChange = (swiper: SwiperType) => {
         switch (swiper.activeIndex) {
             case 0:
@@ -26,25 +28,21 @@ const APP = () => {
         }
     }
 
-    const init =async ()=>{
+    const init = () => {
         //https://mc.kurogames.com/spine-file/role_changli/c_changli_1.atlas
         //https://mc.kurogames.com/spine-file/role_changli/c_changli_1.json
         //https://mc.kurogames.com/spine-file/role_changli/c_changli_1.png
-        const js=await fetch("https://mc.kurogames.com/spine-file/role_changli/c_changli_1.json").then(res=>res.json())
-      
-      const app=new PIXI.Application({ width: 800, height: 600 })
-      document.getElementById('role-box')?.appendChild(app.view)
-
     }
-     init()
-    const playAudio=()=>{
-       const myaudio =document.getElementById('roleAudio') as HTMLAudioElement
-      if(myaudio.paused){
-        myaudio.play()
-      }else{
-        myaudio.pause()
-      }
-       
+    const playAudio = () => {
+        const myaudio = document.getElementById('roleAudio') as HTMLAudioElement
+
+        if (myaudio.paused) {
+
+            myaudio.play()
+        } else {
+            myaudio.pause()
+        }
+
     }
     const swiperButtonPrev = () => {
         if (activeIndex > 0) {
@@ -62,6 +60,19 @@ const APP = () => {
     useEffect(() => {
         console.log(activeIndex)
         swiperRef.current?.slideTo(activeIndex)
+        console.log("dsadsa")
+        useDebounce(()=>{
+            console.log("aaaa")
+            gasp.to(['.role-box', '.role-camp', '.role-intr-box'], {
+                opacity: 0,
+                onComplete:()=>{
+                    setActiveMoveIndex(activeIndex)
+                    gasp.to(['.role-box', '.role-camp', '.role-intr-box'], {
+                        opacity: 1
+                    })
+                }
+            })
+        },300,false)();
     }, [activeIndex])
 
 
@@ -73,8 +84,8 @@ const APP = () => {
                     <div className='light'></div>
                     <div className='lightVideo'>
                         <video
-                        loop autoPlay muted playsInline preload='auto'
-                        src="https://mc.kurogames.com/website-preface/video/desktop/lizi-loop.mp4"></video>
+                            loop autoPlay muted playsInline preload='auto'
+                            src="https://mc.kurogames.com/website-preface/video/desktop/lizi-loop.mp4"></video>
                     </div>
                 </div>
                 <div className='page-title-box'>
@@ -85,23 +96,24 @@ const APP = () => {
                     <img className='title-bg-2' src="https://mc.kurogames.com/website-preface/assets/title-bg-2-9ee080e2.png" alt="" />
                 </div>
                 <div className='role-box'>
-
-                    {/* <img src={roleNavData[activeIndex].roleBoxSrc} alt="" /> */}
+                    <img src={roleNavData[activeMoveIndex].roleBoxSrc} alt="" />
+                </div>
+                <div className='role-camp'>
+                    <img src={roleNavData[activeMoveIndex].camp} alt="" />
                 </div>
                 <div className='role-intr-box'>
                     <div className='role-name'>
-                        <img className='role-name-img1' src={roleNavData[activeIndex].attr} alt="" />
-                        <p>{roleNavData[activeIndex].name}</p>
-                        <img  className='role-name-img2' src={roleNavData[activeIndex].starSrc} alt="" />
+                        <img className='role-name-img1' src={roleNavData[activeMoveIndex].attr} alt="" />
+                        <p>{roleNavData[activeMoveIndex].name}</p>
+                        <img className='role-name-img2' src={roleNavData[activeMoveIndex].starSrc} alt="" />
                     </div>
                     <div className='attr-voice-box'>
                         <div className='voice-box'>
-                            <span>{roleNavData[activeIndex].cv}</span>
-                           
-                            <SoundLowIcon style={{fontSize:"1.1rem",color:'#dab67d',cursor:"pointer"}} onClick={playAudio}></SoundLowIcon>
-                            <audio id='roleAudio' src={roleNavData[activeIndex].audioSrc}></audio>            
+                            <span>{roleNavData[activeMoveIndex].cv}</span>
+                            <SoundLowIcon style={{ fontSize: "1.1rem", color: '#dab67d', cursor: "pointer" }} onClick={playAudio}></SoundLowIcon>
+                            <audio id='roleAudio' src={roleNavData[activeMoveIndex].audioSrc}></audio>
                         </div>
-                        <div className='voice-text'>{roleNavData[activeIndex].content}</div>
+                        <div className='voice-text'>{roleNavData[activeMoveIndex].content}</div>
                     </div>
                 </div>
             </div>

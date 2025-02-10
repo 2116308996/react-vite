@@ -21,13 +21,12 @@ const APP = () => {
                 <video
                     style={{
                         width: '100%',
-                        objectFit: 'cover',  // 保持比例填充
                         position: 'absolute',
                         left: '0',
                         top: '50%',
                         transform: "translateY(-50%)"
                     }}
-                    autoPlay playsInline controls muted={false}
+                    autoPlay={false} playsInline controls muted={false}
                     preload="auto" controlsList="nodowmload"
                     id="popupVideoPlay"
                     >

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import './App.css'
@@ -14,20 +14,25 @@ declare global {
   }
 }
 function App() {
-  const mylocation=useLocation()
-  console.log(mylocation.pathname,staticRouters)
-  window.onresize=()=>{
-    const width=window.innerWidth;
-    let oldFontSize=16
-    let newFontSize=16
-    if(width<800){
-       newFontSize=oldFontSize*0.5
-    }else{
-      newFontSize=oldFontSize-((1960-width)/1160)*oldFontSize*0.5
+  const mylocation = useLocation()
+  console.log(mylocation.pathname, staticRouters)
+  const setFontSize = () => {
+    const width = window.innerWidth;
+    let oldFontSize = 16
+    let newFontSize = 16
+    if (width < 800) {
+      newFontSize = oldFontSize * 0.5
+    } else {
+      newFontSize = oldFontSize - ((1960 - width) / 1160) * oldFontSize * 0.5
     }
-    document.documentElement.style.fontSize=newFontSize+'px'
-    console.log('resize')
+    document.documentElement.style.fontSize = newFontSize + 'px'
   }
+  window.onresize = () => {
+    setFontSize()
+  }
+  useEffect(()=>{
+    setFontSize()
+  },[])
   // const userouter = createBrowserRouter(routes);
 
   return (
@@ -39,7 +44,7 @@ function App() {
       <div>
         <Routes>
           {routes.map((route: any, index: number) => (
-            <Route key={index} path={route.path} element={route.element}/>
+            <Route key={index} path={route.path} element={route.element} />
           ))}
         </Routes>
       </div>

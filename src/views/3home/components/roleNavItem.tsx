@@ -13,7 +13,7 @@ interface PropsType {
 
 
 const RoleNavItem = ({props,active}: {props:PropsType,active:boolean}) => {
-    console.log(swiperNavigationImg)
+  //  console.log(swiperNavigationImg)
     return (
         <div className={'role-nav-item '+(active ? 'active' : '')}>
             <img src={props.headSrc} alt="" style={{position:'absolute',top:'0',left:'0',transform:'translate(3rem,-1rem)',width:'16rem',height:'16rem'}}/>

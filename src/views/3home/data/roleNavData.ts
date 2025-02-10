@@ -12,13 +12,15 @@ export default [{
     attr:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAABHPGVmAAAAjVBMVEUAAADMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzvQs+2AAAALnRSTlMA+gv0qsZB75InHAfLi0cwFiLrtnnm4mER1ruFbGZPOb+YWtzPo1avnH9y07Gb66cp6AAAA7hJREFUaN7t2dmSqjAQBuAOuygiihuM++6Z+d//8c6IjDEmjAQqd/PdqVVCSNLdaeiPWduEzBulZNyAzcm4DyAm01wgIsNCAGMyLMU3j8ya49uZjIpx43fJpAiFI5k0QeFEBnm4YzMyZ4PSlIzp+iityZglHkIyxcHDldrKLwNSsGw87CvG+kV1dcDOMUmmeNIhibWY44NqGwHI+vQiw5NcSjT5EPAtqq2Pm3/Hl3SFJzsSdA7Fr5F2HETvJV0JVop4w0LSsLgPhZ71IAgU29QhHdYQ3ybiahANhVB8KEenJcfNPF8J3wiW9GO2dYrV7ZKeQbRxitEMz0uLiJYuJJ/FHSTXNSuukDn95skD9ujDhdKpn89x16NmVtCQU0M+6oupoQMk416W7X3F99TUEQJ/s5xRISyXE7ehpmYM3GTRFX67COPpkz45JEZS6AsdPNhWm+q6NPRIYcGA9uVLH3eTTsXvNu4W1FyvHEeHKiwZn/d2q4t5VOmKAkuoqX2NzTxCIWhZAe0sMXSKHzsMN/ZmRfqSy1xRLW5vEdd3PFVVOck7pGPw4aqSU9JDybGUyWx/DakeaztiyjQbjvHgWhVpeT2d0Vv9gw1BX/1vZ/qRQsScZZd+sQrGeMEsKi0qYrsHif/lVU71DrLd22plAJVJFCunWimjkgVOrJdsqP1LQ2mq1T6rSiKffoxRaT3lu45fQ3Jqc5H1YiY9rfaPS35a8hZvNPEzKIyjmNTiYAz9JbySV/DZ09uLvJHS3dfajOx07NI71vGT4X1Y4X/kSlNdy+x5GYzrBEg+1TqSdK5qDExvod4+iaGeb3F9cVCuL+ERd8OBeDc2bmyvZR1xMZh+eSGxeluZsYTaVhLDhCp4DIUvam77prjz7PalMEW/l6lThlJEzfEsxnJLSkEHIcI11cEvR4fUF1stTaUQDIO+VQ7i+Bri0hYtc8nEzbLeEBK3+QsG1MYG1MwUGqYtu4GTYLuH0mjq+LhzSF/sjO7djF5aBFfVZUYeEXX7waSIkM4m6DQZBRstQuFoJzjwO7r0ym+0hExeMnwsilCy5j01zXiSySc3bqiI+DlpsHzFwTmEIFAskqGlfX7/XJFg/UsP0nO1j9o7wA4S1b6pDokrhwFznRPpOJ29abVcSJIEtkZiibZdUjm9C7vWdUNtHfHQI1O6PIVcyZizyfcn0hk0I4PGPLCbE/FGnTkxTx4GzXmb3pyUv/s1J+FHOYNco+/jeRaYkGkDhoiMGyEm47ZzMs+60p8/tfwHamR0OxBxx1kAAAAASUVORK5CYII=",
     //角色语言文案
     content:"岁主在上，愿你的旅途永远有爱与光明垂耀。",
+    camp:"https://mc.kurogames.com/website-preface/assets/linaxita-7fc1043f.png",
     starSrc:"https://mc.kurogames.com/website-preface/assets/rate-5-47845173.png",
-    roleBoxSrc:"https://mc.kurogames.com/website-preface/assets/dengdeng-170fc6ca.png"
+    roleBoxSrc:"https://mc.kurogames.com/website-preface/assets/roccia-c656e487.webp"
 },
 {
     name: '布兰特',
     englishName: 'Brant',
     cv:"中文CV:莫然",
+    camp:"https://mc.kurogames.com/website-preface/assets/linaxita-7fc1043f.png",
     audioSrc:"https://mc.kurogames.com/website-preface/assets/blt-ef7a9a2f.mp3",
     roleVideoSrc:"",
     starSrc:"https://mc.kurogames.com/website-preface/assets/rate-5-47845173.png",
@@ -34,12 +36,13 @@ export default [{
     englishName: 'Changli',
     content:"尘世千古，方圆之间……与你棋逢对手，实乃大幸。",
     cv:"中文CV:沐霏",
+    camp:"https://mc.kurogames.com/website-preface/assets/hl-23a50b49.png",
     pixiSrc:"https://mc.kurogames.com/spine-file/role_changli/c_changli_1.png",
     starSrc:"https://mc.kurogames.com/website-preface/assets/rate-5-47845173.png",
     audioSrc:"https://mc.kurogames.com/website-preface/assets/changli-4e5e7d29.mp3",
     headSrc: 'https://mc.kurogames.com/website-preface/assets/changli-ad0c7178.png',
     roleVideoSrc: 'https://mc.kurogames.com/website-preface/assets/video-border-2946b996.png',
-    roleBoxSrc:"https://mc.kurogames.com/website-preface/assets/dengdeng-170fc6ca.png",
+    roleBoxSrc:"https://mc.kurogames.com/website-preface/assets/roccia-c656e487.webp",
     attr:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAABHPGVmAAAAh1BMVEUAAADMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMwrRDr0AAAALHRSTlMA+goGFrNJ9ejJvYHixJp1XvHPqxHtj4dXPzenpWdEIqAd13ttTzHclSonuMJwoSUAAANgSURBVGje7djHltowFAbgK7k3XHCh14T6v//zJRgMSDgTy2Otkm81h8Xo6Bb5SvRP4qSdvSTd8vHOIM0uR2jfyNkFzqRXHgLYkl5zAFiRVlPczEmrCLWfpNEFd6zipE2MhrvPSZMxXpxSU5FFeMcWB9Igg+Q6pcFF+OANXmkbtPBsGtSyToXPIIoGDZrJ6n7PEx8ia03DOQH4Qb+tSwc1De1pukDy+LMUo3Zc0VCmDDE9rK8QnAbbjO1Yb4WQ4t1usOY8R1t6uuzwzkmGSwy9cClkJelgjCGYG6SBYUFw5aQB9yCwtOxl60KwIB1siPakwwYim/rjsyQoR2W8knNrphC4Zt8VllcHD8xakSDAEGnh+wICfy1sxYFoSursELJUCPwCIo+UlWjBpkKBSSbfOTnCAjfZZhyGOT1xBlH2jZGOVXX11HlPgq8GGbt/rEZzAM6FajN6GUFyJQUTsWoiACf6tIdsS53lrlBShvWHpP6ALFabT168+p8l9CmGLKKu1mLVWMTD9n6uIGN5v43AJzoUdYfILAhU7mM8heB425wFZ2mQxMWHQKG0BGYdwyROuHxj/TSmbhZdT4s5GupNX0DiU6sDw6ewY20BnU4LnqFF2jMl7R897qNNoXCllmQfq2w9AP3DNUILV6x/Iy7QLlMqLlk04c+MVy5aqDzBWPWu8Yl5oyAOSsvFF2KFRfYp+lkpvG5NNuglNRQSb8/Qy4a6Ce6HaYQ+ZtRNAgAJrdCDTx0dHjO6pXEjZLD7XLt2oOpEnXmPD9USinacOgua2WYDJemZupvh8Zhi+FDAVqTi2Mw2XGEVx6YbtXgdmrG7m2Km/ML16t2YoQvv0utxnjUDdoa/Kw1Sdm6GG/kD1W43pT7mwjCY792vlkgM6mXrAHi7VBkTi6FNurCpt/190n7Df54ycSEnqlYGfYNRp7uSfz3//BGMfiuDpb2mbzuzpu91WkL/Ks3xWJFOzcHlm+KvJg0qz3BTLOmNPaJhbXeoZRN6iphJwzJ3uAurmVEHawHENDDTQ8PxrNG4qM+0ofExZCENL4DEIQ1WLgQp6WBa0rVej6QQRlFNzA2eAtJm5uHhQBqNUPNIJ+OImwlpVelKu/wYmF5IrwpgNmnmgSWk2QzhlDQz/CAn3XJO//0CNH2MRKk5NSwAAAAASUVORK5CYII="
 }
 ,
@@ -49,6 +52,7 @@ export default [{
     headSrc: 'https://mc.kurogames.com/website-preface/assets/dengdeng-ad13ab4e.png',
     audioSrc:"",
     cv:"中文CV:静宸",
+    camp:"https://mc.kurogames.com/website-preface/assets/hl-23a50b49.png",
     starSrc:"https://mc.kurogames.com/website-preface/assets/rate-4-9bc454d7.png",
     content:"嘿嘿，忙是忙了点，但被大家需要的感觉特别好……灯灯我会努力的！",
     roleVideoSrc:"https://mc.kurogames.com/website-preface/assets/dengdeng-a3254f0a.mp3",
@@ -59,6 +63,7 @@ export default [{
 {
     name: '炽霞',
     englishName: 'ChiXia',
+    camp:"https://mc.kurogames.com/website-preface/assets/hl-23a50b49.png",
     headSrc: 'https://mc.kurogames.com/website-preface/assets/chixia-a156091c.png',
     cv:"中文CV:蔡娜",
     audioSrc:"https://mc.kurogames.com/website-preface/assets/chixia-903232a7.mp3",
@@ -72,6 +77,7 @@ export default [{
 {
     name: '釉瑚',
     englishName: 'Youhu',
+    camp:"https://mc.kurogames.com/website-preface/assets/hl-23a50b49.png",
     headSrc: 'https://mc.kurogames.com/website-preface/assets/youhu-ebd2dd8a.png',
     cv:"中文CV:刘一蕾",
     audioSrc:"https://mc.kurogames.com/website-preface/assets/youhu-affe5d4c.mp3",
@@ -85,6 +91,7 @@ export default [{
 {
     name: '桃祈',
     englishName: 'Taoqi',
+    camp:"https://mc.kurogames.com/website-preface/assets/hl-23a50b49.png",
     headSrc: 'https://mc.kurogames.com/website-preface/assets/taoqi-8af57ef9.png',
     cv:"中文CV:kiyo",
     audioSrc:"https://mc.kurogames.com/website-preface/assets/taoqi-c8d9b28f.mp3",

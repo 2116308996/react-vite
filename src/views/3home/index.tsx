@@ -9,7 +9,7 @@ import 'swiper/css';
 //import 'swiper/css/pagination';
 //import 'swiper/css/navigation';
 import './swiper.less'
-import { throttle } from '../../hooks/throttle';
+import { useThrottle } from '../../hooks/throttle';
 import gasp from 'gsap'
 const APP = () => {
     let speed:number=1000
@@ -71,7 +71,7 @@ const APP = () => {
     useEffect(() => {
         gaspSwiperItem1Enter()
         // 方法一：使用 wheel 事件
-        const handleWheel = throttle((e: WheelEvent) => {
+        const handleWheel = useThrottle((e: WheelEvent) => {
             if (!swiperRef.current) return;
             // deltaY > 0 表示向下滚动，< 0 表示向上滚动
             if (e.deltaY > 0) {
