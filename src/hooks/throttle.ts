@@ -33,6 +33,7 @@ const useDebounce = (func: Function, delay = 300, flag = true) => {
         }
     }
 }
+//tsc -b && 
 export {
     useDebounce,
     useThrottle
