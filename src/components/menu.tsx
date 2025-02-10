@@ -22,7 +22,9 @@ function Double() {
   let url = ""
   if (window.location.href.includes('https://2116308996.github.io/react-vite')) {
     url = window.location.href.split('https://2116308996.github.io/react-vite')[1].split('?')[0]
-  } else {
+  } else if(window.location.href.includes('https://music-5g88oxp32ebd516d-1303884503.tcloudbaseapp.com')){
+    url = window.location.href.split('https://music-5g88oxp32ebd516d-1303884503.tcloudbaseapp.com')[1].split('?')[0]
+  }else{
     url = window.location.href.split('localhost:5173')[1].split('?')[0]
   }
   const navigate = useNavigate();
