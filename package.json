@@ -2,7 +2,7 @@
   "name": "react-vite",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://github.com/2116308996/react-vite/",
+  "homepage": "./",
   "type": "module",
   "scripts": {
     "dev": "vite",
