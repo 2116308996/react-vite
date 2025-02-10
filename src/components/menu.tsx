@@ -19,7 +19,13 @@ export interface RouteItem {
   children?: RouteItem[];
 } 
 function Double() {
-  const url=window.location.href.split('localhost:5173')[1].split('?')[0]
+  let url=""
+  if(window.location.href.includes('https://2116308996.github.io/react-vite/')){
+    url=window.location.href.split('https://2116308996.github.io/react-vite/')[1].split('?')[0]
+  }else{
+    url=window.location.href.split('localhost:5173')[1].split('?')[0]
+  }
+   
   //console.log("url",url)
   var [active, setActive] = useState<MenuValue>('/1home/1home');
   if(url!='/'){
