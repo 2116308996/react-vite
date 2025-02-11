@@ -49,8 +49,10 @@ const APP = () => {
                         </a>
                     </div>
                     <div className='link-item'>
+                        
                         <img src={LinkItem[1]} alt="微信" onMouseEnter={onMouseEnterWX}
                             onMouseOut={onMouseOutWX} />
+                                       
                         <img className='qrCode' src="https://mc.kurogames.com/website-preface/assets/qrcode_wechat-c652e36d.jpg" alt="微信" />
                     </div>
                     <div className='link-item'>
