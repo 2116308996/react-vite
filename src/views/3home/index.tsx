@@ -3,6 +3,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import type { Swiper as SwiperType } from 'swiper';
 import SwiperItem1 from './swiper/index1'
 import SwiperItem2 from './swiper/index2'
+import SwiperItem3 from './swiper/index3';
+import SwiperItem4 from './swiper/index4';
+import SwiperItem5 from './swiper/index5';
+import SwiperItem6 from './swiper/index6';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 //@ts-ignore
 import 'swiper/css';
@@ -116,10 +120,10 @@ const APP = () => {
                 >
                     <SwiperSlide><SwiperItem1></SwiperItem1></SwiperSlide>
                     <SwiperSlide><SwiperItem2></SwiperItem2></SwiperSlide>
-                    <SwiperSlide>Slide 3</SwiperSlide>
-                    <SwiperSlide>Slide 4</SwiperSlide>
-                    <SwiperSlide>Slide 5</SwiperSlide>
-                    <SwiperSlide>Slide 6</SwiperSlide>
+                    <SwiperSlide><SwiperItem3></SwiperItem3></SwiperSlide>
+                    <SwiperSlide><SwiperItem4></SwiperItem4></SwiperSlide>
+                    <SwiperSlide><SwiperItem5></SwiperItem5></SwiperSlide>
+                    <SwiperSlide><SwiperItem6></SwiperItem6></SwiperSlide>
 
                 </Swiper>
                 <div className='footer' style={{display:swiperActiveIndex==5?'none':'block'}}>
