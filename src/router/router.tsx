@@ -48,5 +48,5 @@ function RouteFilter(foldRoutes: RouteItem[]) {
     });
 }
 RouteFilter(foldRoutes);
-console.log(staticRouters, dynamicsRouters, foldRoutes,routes)
+//console.log(staticRouters, dynamicsRouters, foldRoutes,routes)
 export  { staticRouters, dynamicsRouters, foldRoutes,routes };

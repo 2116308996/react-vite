@@ -15,7 +15,7 @@ declare global {
 }
 function App() {
   const mylocation = useLocation()
-  console.log(mylocation.pathname, staticRouters)
+  //console.log(mylocation.pathname, staticRouters)
   const setFontSize = () => {
     const width = window.innerWidth;
     let oldFontSize = 16

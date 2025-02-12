@@ -60,7 +60,7 @@ const APP = () => {
         })
     }
     const onSlideChange = (swiper: SwiperType) => {
-        console.log(swiper)
+      //  console.log(swiper)
         setSwiperActiveIndex(swiper.activeIndex)
         switch(swiper.activeIndex){
             case 0:

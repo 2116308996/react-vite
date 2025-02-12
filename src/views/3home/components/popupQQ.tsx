@@ -16,7 +16,7 @@ const APP = () => {
         icon:null
       });
     }).catch(err => {
-      console.error('复制失败:', err);
+     // console.error('复制失败:', err);
     });
   }
   return (<>

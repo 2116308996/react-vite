@@ -28,7 +28,7 @@ function Double() {
     url = window.location.href.split('localhost:5173')[1].split('?')[0]
   }
   const navigate = useNavigate();
-  console.log("url", url)
+ // console.log("url", url)
   var [active, setActive] = useState<MenuValue>('/1home/1home');
 
   const [checked, setChecked] = useState(false);
@@ -36,7 +36,7 @@ function Double() {
     if (url != '/') {
       active = url;
     } else {
-      console.log("url", url)
+      //console.log("url", url)
       navigate('/1home/1home')
     }
   }, [])
