@@ -50,12 +50,12 @@ export default [{
     name: '灯灯',
     englishName: 'Lumi',
     headSrc: 'https://mc.kurogames.com/website-preface/assets/dengdeng-ad13ab4e.png',
-    audioSrc:"",
+    audioSrc:"https://mc.kurogames.com/website-preface/assets/dengdeng-a3254f0a.mp3",
     cv:"中文CV:静宸",
     camp:"https://mc.kurogames.com/website-preface/assets/hl-23a50b49.png",
     starSrc:"https://mc.kurogames.com/website-preface/assets/rate-4-9bc454d7.png",
     content:"嘿嘿，忙是忙了点，但被大家需要的感觉特别好……灯灯我会努力的！",
-    roleVideoSrc:"https://mc.kurogames.com/website-preface/assets/dengdeng-a3254f0a.mp3",
+    roleVideoSrc:"",
     roleBoxSrc:"https://mc.kurogames.com/website-preface/assets/dengdeng-170fc6ca.png",
     attr:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAABHPGVmAAAAjVBMVEUAAADMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzvQs+2AAAALnRSTlMACQTv+/d+FQ81L2U7ybrQptzCkYVFJOmfalpKHxvirpgq2HdV87JyUIthP6tT4mv3ywAABJNJREFUaN7s1tlyqkAQANBm2EFkcQEUBBdAJen//7wbBhgGgkSovNyqnLeYmJ7eagb+/PnfCTCKwG/a72HM+Xcy0NSIHveqwnfaE5Yh8bm8hcrGWVuu7zrXUoOKmo9UTN8OPzC1l8eNjN0tVB5Bbl1EbJyS647/xjP/3oDPNfSliG6yUULzVjFNs1AeqZN79knGgcx7fMYwtE5h6Cn3i6iK+JaTExrjMxOLVxgoUAHeBn8kWZtbDK898QB9VxT5VI44Tfa2VQem5fJxmAl63TysxKkAa2UlwBtUUdaBZyKiFwFFQvllibxtKcC7Duj3lvJOz5juYtUoLjjusjlqMMsHnmJ+4XGa6JgxzKb6aHPnEiR8zVJ0AoscES2uvPbLNoeDFASYIUVck+nFEIM7+5fEMB+J7WfVirvrIHwvOc1FdAjX+aH1nf02CnNx4gQTSgkxZUUQh40o2WlCC8f5WxUmsBJtoRH0j/mEhhHIbWYjw5EpP021UG1E0W45cux9+2mOzNHEEac7TNOrs5lQ42riNcfbJ8hZjUyHLCMGP7RGQUTpMGy9LdSJbiXsBxFOyLuEEYCwUpzpPSVWFeXeT0Wsa6UOe6AD9Ar2IKwi07mc5SrnXa8rJuuZcdgmFxbKANC4GVTgbQWtbNmsZ8UlAKTo2kmM2zZxJRoEnK5vBN7n0Ulc0YXwmxPeXPSGk6gfVODrdYQZooz2gV4vu6o05xVtVDQ+j2yRCMxhIotCpy2fKrmGDQvmWddRDPjSLYYLAzEdOqldf5hnn2HFr6II3UqWg6ZYtAtiu0swU4FdFNXGRgA9AX6yTFhPZiBe88VelEwYHORQ5cPt/0x7Gbvua03I3tvsKNU/R9hyYEnBWBTh41tvz1Ur7tWQY0syYCZiIw4mmV8VzcUvO/rSZCwCM+msoSXdSp9fFVIPuc5GfGnBUmzUD1g151Zlg1QMAD4y4nHBO4xFqRt+8NsJejafE4A9MvIK5nt2LTXrRjzklN4Azehd2B+x2ZvPQ6YAKqqupbhNMem9NgJY5CyNXXqCzV9SF2ycNFhmg51Ea/fU4i4QlbtNFlIz7Lh6O7+hWHdK5d4aH7CYghwpUNvgtBM2l2sWw2KaiDw5/deOnewmDANhAP7jbGQpBLK0LE1JgirRhnn/xysyyCagqFIzcyrf0RdrbI894xgXaUtU3JT+HcATitbukzItk+y8kJHdktrBBKFPY2oAB5Mik2Q0prBXzwum2dIIrwKwJK3En/zeOn7YB2uOqYpkW56CFd2LbGEXgUk8p4FPnPUmpiGuxGwAKPdadjM6kpXbor8HJ2dJwyu3MDExWpvFSm2P1INXNex2Qs/sCCM1LEo25mixT2K/RjKJQBBf5nCgKVenC7dOb7S6/UtIwUv37F4H7XqAV+BWELXfw/+wEsxO5AcOjJ1+R5ht3Pz9PjNPYOUkXfjQvLYKrGYPAz7RF4QdiGoFYRnRGsKUS68OhJVEHaTl5M4graYC0iLyQ0g7Ug5xS38HaTHtIS7wKohbvEFc4zUQF2SQt4ghrukhL2ggr4O8agd5Dp6e/p0fyic7Lszogm4AAAAASUVORK5CYII="
 }

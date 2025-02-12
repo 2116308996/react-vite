@@ -59,6 +59,31 @@ const APP = () => {
             opacity:0
         })
     }
+    const gaspSwiperItem2Enter=()=>{
+        gasp.fromTo(['.role-intr-box','.page-title-box','.page-bg-title-box'],{
+            left: '-20rem',
+            transform:'scale(1.5)',
+            
+            opacity:0
+        },{
+            transform:'scale(1)',
+            left: '6rem',
+            opacity:1,
+            duration:1,
+        })
+        gasp.fromTo('.role-nav-box',{
+            right: '-10rem',
+            opacity:0,
+            transform:'scale(1.5) translateY(-50%)'
+        },
+        {
+            duration:1,
+            right: '8rem',
+            transform:'scale(1) translateY(-50%)',
+            opacity:1,
+            
+        })
+    }
     const onSlideChange = (swiper: SwiperType) => {
       //  console.log(swiper)
         setSwiperActiveIndex(swiper.activeIndex)
@@ -68,6 +93,7 @@ const APP = () => {
                 break;
             case 1:
                 gaspSwiperItem1Out()
+                gaspSwiperItem2Enter()
                 break;
             default:
                 break;

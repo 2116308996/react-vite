@@ -59,21 +59,24 @@ const APP = () => {
     const onclickSwiperSlide = (index: number) => {
         setActiveIndex(index)
     }
-    useEffect(() => {
-        console.log(activeIndex)
-        swiperRef.current?.slideTo(activeIndex)
-        console.log("dsadsa")
-        gasp.to(['.role-box', '.role-camp', '.role-intr-box'], {
-            opacity: 0
-        })
+    const showImg=()=>{
+        console.log("图片加载完成")
         timer&&clearTimeout(timer)
         timer=setTimeout(()=>{
-            console.log("aaaa")
-                    setActiveMoveIndex(activeIndex)
                     gasp.to(['.role-box', '.role-camp', '.role-intr-box'], {
                         opacity: 1
                     })
         },300);
+    }
+    useEffect(() => {
+        console.log(activeIndex)
+        swiperRef.current?.slideTo(activeIndex)
+        gasp.to(['.role-box', '.role-camp', '.role-intr-box'], {
+            opacity: 0,
+            onComplete:()=>{
+                setActiveMoveIndex(activeIndex)
+            }
+        })
     }, [activeIndex])
 
 
@@ -89,7 +92,7 @@ const APP = () => {
                     <img className='title-bg-2' src="https://mc.kurogames.com/website-preface/assets/title-bg-2-9ee080e2.png" alt="" />
                 </div>
                 <div className='role-box'>
-                    <img src={roleNavData[activeMoveIndex].roleBoxSrc} alt="" />
+                    <img onLoad={showImg} src={roleNavData[activeMoveIndex].roleBoxSrc} alt="" />
                 </div>
                 <div className='role-camp'>
                     <img src={roleNavData[activeMoveIndex].camp} alt="" />
