@@ -12,7 +12,6 @@ import roleNavData from '../data/roleNavData'
 import RoleNavItem from '../components/roleNavItem'
 import { SoundLowIcon } from 'tdesign-icons-react';
 import { useDebounce } from '../../../hooks/throttle';
-import BgBox from '../components/bgBox'
 let timer:ReturnType<typeof setTimeout>|null=null;
 import gasp from 'gsap'
 const APP = () => {
@@ -82,8 +81,7 @@ const APP = () => {
 
     return (<>
         <div id='swiperItem2'>
-            <div className='role-nav-item-bg'>
-                <BgBox></BgBox>
+            <div className='role-nav-item-bg'>         
                 <div className='page-title-box'>
                     <img src="https://mc.kurogames.com/website-preface/assets/page-title-1be9dc58.png" alt="" />
                 </div>

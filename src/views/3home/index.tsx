@@ -8,6 +8,7 @@ import SwiperItem4 from './swiper/index4';
 import SwiperItem5 from './swiper/index5';
 import SwiperItem6 from './swiper/index6';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import BgBox from './components/bgBox'
 //@ts-ignore
 import 'swiper/css';
 //import 'swiper/css/pagination';
@@ -84,6 +85,16 @@ const APP = () => {
             
         })
     }
+    const gaspSwiperItem3Enter=()=>{
+        gasp.fromTo('.page-title',{
+            top: '-6rem',
+            opacity:0,
+        },{
+            top: '6rem',
+            opacity:1,
+            duration:1,
+        })
+    }
     const onSlideChange = (swiper: SwiperType) => {
       //  console.log(swiper)
         setSwiperActiveIndex(swiper.activeIndex)
@@ -94,6 +105,9 @@ const APP = () => {
             case 1:
                 gaspSwiperItem1Out()
                 gaspSwiperItem2Enter()
+                break;
+            case 2:
+                gaspSwiperItem3Enter()
                 break;
             default:
                 break;
@@ -125,6 +139,7 @@ const APP = () => {
     return (
         <>
             <main className='swiper-container'>
+            <BgBox></BgBox>
                 <Swiper
                     onBeforeInit={(swiper) => {
                         swiperRef.current = swiper;
