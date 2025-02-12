@@ -22,7 +22,7 @@ const APP = () => {
   return (<>
     <div className="popupQQ" style={{
       backgroundColor: 'rgba(0,0,0,0.7)',
-      width: '100%', height: 'calc(100vh - 56px)', position: 'absolute', display: 'none'
+      width: '100%', height: 'calc(100vh)', position: 'absolute', display: 'none'
     }}>
       <div className="count" style={{
         background: "url(https://mc.kurogames.com/website-preface/assets/popup-qq-8c14af50.png) no-repeat center",

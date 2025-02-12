@@ -11,7 +11,7 @@ const APP = () => {
     return (<>
         <div className="popupVideo" style={{
             backgroundColor: 'rgba(0,0,0,0.7)',
-            width: '100%', height: 'calc(100vh - 56px)', position: 'relative', display: 'none'
+            width: '100%', height: 'calc(100vh)', position: 'relative', display: 'none'
         }}>
             <div style={{
                 width: '50rem',height:'30rem', position: 'absolute', top: "50%",left:'50%',
