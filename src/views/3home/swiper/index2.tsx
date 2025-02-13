@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide,SwiperClass } from 'swiper/react';
 import type { Swiper as SwiperType } from 'swiper';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 //@ts-ignore
@@ -15,10 +15,10 @@ import { useDebounce } from '../../../hooks/throttle';
 let timer:ReturnType<typeof setTimeout>|null=null;
 import gasp from 'gsap'
 const APP = () => {
-    const swiperRef = useRef<SwiperType>()
+    const swiperRef = useRef<SwiperClass>()
     const [activeIndex, setActiveIndex] = useState(0)
     const [activeMoveIndex, setActiveMoveIndex] = useState(0)
-    const onSlideChange = (swiper: SwiperType) => {
+    const onSlideChange = (swiper: SwiperClass) => {
         switch (swiper.activeIndex) {
             case 0:
                 break;
