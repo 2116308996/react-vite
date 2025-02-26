@@ -20,6 +20,7 @@ const APP = () => {
     const swiperRef = useRef<SwiperClass>()
     const [swiperActiveIndex, setSwiperActiveIndex] = useState(0)
     const isRemoveFooter = useRef<boolean>(false)
+    const touchStartY = useRef<number>(0)
     const gaspSwiperItem1Enter = () => {
         setTimeout(() => {
             gasp.to('.logo', {
@@ -200,7 +201,7 @@ const APP = () => {
             }
             // 阻止默认滚动
             e.preventDefault();
-        }, 500);
+        }, 1000);
         // 添加事件监听
         document.addEventListener('wheel', handleWheel, { passive: false });
 
@@ -209,6 +210,55 @@ const APP = () => {
             document.removeEventListener('wheel', handleWheel);
         };
     }, []);
+    useEffect(() => {
+        const swiper: HTMLDivElement = document.getElementsByClassName('swiper')[0] as HTMLDivElement
+        const footerText: HTMLDivElement = document.getElementsByClassName('footer-text')[0] as HTMLDivElement
+        const handleTouchStart = (event: TouchEvent) => {
+            // 处理触摸开始
+            console.log('Touch started', event.touches[0].clientY);
+            touchStartY.current = event.touches[0].clientY
+            event.preventDefault()
+          };
+       
+          const handleTouchEnd = (event: TouchEvent) => {
+            // 处理触摸结束
+            console.log('Touch ended', event.changedTouches[0].clientY);
+
+            const moveY=touchStartY.current - event.changedTouches[0].clientY
+
+            if (swiperRef.current?.activeIndex == 4 && moveY > 100 && isRemoveFooter.current == false) {
+                isRemoveFooter.current = true
+                gasp.to([swiper, footerText], {
+                    transform: 'translateY(-130px)',
+                })
+                console.log("top", swiperRef.current?.activeIndex, isRemoveFooter)
+            }
+            else if (isRemoveFooter.current == true && moveY < -100 && swiperRef.current?.activeIndex == 4) {
+                isRemoveFooter.current = false
+                gasp.to([swiper, footerText], {
+                    transform: 'translateY(0px)',
+                })
+                console.log("bottom", swiperRef.current?.activeIndex, isRemoveFooter)
+            } else if (moveY> 100 && isRemoveFooter.current == false) {
+                // 向下滚动
+                swiperRef.current?.slideNext();
+            }
+            else if (moveY < -100 && isRemoveFooter.current == false) {
+                swiperRef.current?.slidePrev();
+            }
+          };
+       
+          // 绑定事件监听器到document上，或者你可以绑定到具体的元素上
+          document.addEventListener('touchstart', handleTouchStart, { passive: false });
+          document.addEventListener('touchend', handleTouchEnd);
+       
+          // 清理函数，用于移除事件监听器，防止内存泄露
+          return () => {
+            document.removeEventListener('touchstart', handleTouchStart);
+            document.removeEventListener('touchend', handleTouchEnd);
+          };
+
+    }, )
     return (
         <>
             <main className='swiper-container'>

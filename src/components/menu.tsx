@@ -52,7 +52,7 @@ function Double() {
   };
   //console.log(useLocation())
   const mylocation = useLocation();
-  if (mylocation.pathname === '/login'||mylocation.pathname=='/mc') {
+  if (mylocation.pathname === '/login'||mylocation.pathname=='/mc'||mylocation.pathname=='/screen') {
     return (<></>)
   }
 

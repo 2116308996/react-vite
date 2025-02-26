@@ -20,10 +20,10 @@ function App() {
     const width = window.innerWidth;
     let oldFontSize = 16
     let newFontSize = 16
-    if (width < 800) {
-      newFontSize = oldFontSize * 0.5
+    if (width < 245) {
+      newFontSize = oldFontSize * 0.125
     } else {
-      newFontSize = oldFontSize - ((1960 - width) / 1160) * oldFontSize * 0.5
+      newFontSize = oldFontSize - ((1960 - width) / 245) * oldFontSize * 0.125
     }
     document.documentElement.style.fontSize = newFontSize + 'px'
   }
