@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
-import { Swiper, SwiperSlide,SwiperClass } from 'swiper/react';
-import type { Swiper as SwiperType } from 'swiper';
+import { Swiper, SwiperSlide, SwiperClass } from 'swiper/react';
+import * as THREE from 'three';
+import * as PIXI from 'pixi.js'
+import * as PIXISPINE from 'pixi-spine'
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 //@ts-ignore
 //import 'swiper/css/pagination';
@@ -11,13 +13,13 @@ import '../swiperCSS/index2.less'
 import roleNavData from '../data/roleNavData'
 import RoleNavItem from '../components/roleNavItem'
 import { SoundLowIcon } from 'tdesign-icons-react';
-import { useDebounce } from '../../../hooks/throttle';
-let timer:ReturnType<typeof setTimeout>|null=null;
+let timer: ReturnType<typeof setTimeout> | null = null;
 import gasp from 'gsap'
 const APP = () => {
     const swiperRef = useRef<SwiperClass>()
     const [activeIndex, setActiveIndex] = useState(0)
     const [activeMoveIndex, setActiveMoveIndex] = useState(0)
+    const canvasRef = useRef(null)
     const onSlideChange = (swiper: SwiperClass) => {
         switch (swiper.activeIndex) {
             case 0:
@@ -29,11 +31,32 @@ const APP = () => {
         }
     }
 
-  //  const init = () => {
-        //https://mc.kurogames.com/spine-file/role_changli/c_changli_1.atlas
-        //https://mc.kurogames.com/spine-file/role_changli/c_changli_1.json
-        //https://mc.kurogames.com/spine-file/role_changli/c_changli_1.png
-    //}
+    const init = () => {
+        PIXI.Assets.load("https://mc.kurogames.com/spine-file/role_shouanren/c_shouanren_1.png").then((resources: any) => {
+            // 从骨骼数据中读取宽高
+            console.log(resources)
+
+            // 绑定canvas画布，设置宽高
+            const app = new PIXI.Application({
+                view: document.getElementById("canvasRef") as HTMLCanvasElement, // 设置canvas节点  `#canvas`
+                backgroundAlpha: 0, // 背景透明
+                width: 800,
+                height: 600,
+            });
+            // 创建spine动画对象并添加到画布中
+            let animation = new PIXI.Sprite(resources);
+            app.stage.addChild(resources);
+            // 设置动画位置为画布中心
+            animation.x = 800 / 2;
+            animation.y = 600 / 2;
+            // 循环播放动画
+            // animation.state.setAnimation(0, resources, true);
+        })
+        // https://mc.kurogames.com/spine-file/role_shouanren/c_shouanren_1.atlas
+        // https://mc.kurogames.com/spine-file/role_shouanren/c_shouanren_1.json
+        // https://mc.kurogames.com/spine-file/role_shouanren/c_shouanren_1.png
+    };
+    // init();
     const playAudio = () => {
         const myaudio = document.getElementById('roleAudio') as HTMLAudioElement
 
@@ -58,21 +81,22 @@ const APP = () => {
     const onclickSwiperSlide = (index: number) => {
         setActiveIndex(index)
     }
-    const showImg=()=>{
+    const showImg = () => {
         console.log("图片加载完成")
-        timer&&clearTimeout(timer)
-        timer=setTimeout(()=>{
-                    gasp.to(['.role-box', '.role-camp', '.role-intr-box'], {
-                        opacity: 1
-                    })
-        },300);
+        timer && clearTimeout(timer)
+        timer = setTimeout(() => {
+            gasp.to(['.role-box', '.role-camp', '.role-intr-box'], {
+                opacity: 1
+            })
+        }, 300);
     }
+
     useEffect(() => {
         console.log(activeIndex)
         swiperRef.current?.slideTo(activeIndex)
         gasp.to(['.role-box', '.role-camp', '.role-intr-box'], {
             opacity: 0,
-            onComplete:()=>{
+            onComplete: () => {
                 setActiveMoveIndex(activeIndex)
             }
         })
@@ -81,7 +105,7 @@ const APP = () => {
 
     return (<>
         <div id='swiperItem2'>
-            <div className='role-nav-item-bg'>         
+            <div className='role-nav-item-bg'>
                 <div className='page-title-box'>
                     <img src="https://mc.kurogames.com/website-preface/assets/page-title-1be9dc58.png" alt="" />
                 </div>
@@ -91,6 +115,7 @@ const APP = () => {
                 </div>
                 <div className='role-box'>
                     <img onLoad={showImg} src={roleNavData[activeMoveIndex].roleBoxSrc} alt="" />
+                    {/* <canvas id="canvasRef" ref={canvasRef}></canvas> */}
                 </div>
                 <div className='role-camp'>
                     <img src={roleNavData[activeMoveIndex].camp} alt="" />
@@ -109,7 +134,31 @@ const APP = () => {
                         </div>
                         <div className='voice-text'>{roleNavData[activeMoveIndex].content}</div>
                     </div>
+                    <div className='role-video-box' style={{
+                        width: '30rem', height: '18rem',marginTop:"3rem",position:"relative",display:roleNavData[activeMoveIndex].roleVideoSrc?"block":"none"
+                    }}>
+                       
+                        <video
+                            style={{
+                                width: '29rem',
+                                height:'20rem',
+                                position:"absolute",
+                                top:"50%",
+                                left:"50%",
+                                transform:"translate(-50%,-50%)"
+                            }}
+                            autoPlay={true} playsInline  muted={true}
+                            preload="auto" controlsList="nodowmload"
+                            id="popupVideoPlay"
+                            src={roleNavData[activeMoveIndex].roleVideoSrc}
+                        >
+                        </video>
+                        <img style={{
+                            position:"absolute",width: '30rem', height: '18rem',objectFit:"fill"
+                        }} src="https://mc.kurogames.com/website-preface/assets/video-border-2946b996.png" alt="" />
+                    </div>
                 </div>
+
             </div>
 
             <div className='role-nav-box'>
